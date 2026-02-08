@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff9a56 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.6s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #ff6b9d;
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.message {
+    color: #555;
+    font-size: 1.3em;
+    margin: 15px 0;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hearts {
+    margin: 30px 0;
+    font-size: 2em;
+}
+
+.heart {
+    display: inline-block;
+    margin: 0 10px;
+    animation: heartbeat 0.6s infinite;
+}
+
+.heart:nth-child(1) { animation-delay: 0s; }
+.heart:nth-child(2) { animation-delay: 0.1s; }
+.heart:nth-child(3) { animation-delay: 0.2s; }
+.heart:nth-child(4) { animation-delay: 0.3s; }
+.heart:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+#backBtn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    background-color: #ff6b9d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#backBtn:hover {
+    background-color: #ff5985;
+    transform: scale(1.1);
+}
