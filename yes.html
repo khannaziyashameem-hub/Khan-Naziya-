@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine - Yes!</title>
+    <link rel="stylesheet" href="yes.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Yay! 💕</h1>
+        <p class="message">I love you so much! 💖</p>
+        <p class="message">You made me the happiest person today! ✨</p>
+        
+        <div class="hearts">
+            <span class="heart">💕</span>
+            <span class="heart">💕</span>
+            <span class="heart">💕</span>
+            <span class="heart">💕</span>
+            <span class="heart">💕</span>
+        </div>
+
+        <button id="backBtn" onclick="window.location.href='index.html'">Go Back</button>
+    </div>
+
+    <script>
+        // Falling hearts animation
+        setInterval(function() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💕';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = '-30px';
+            heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+            heart.style.opacity = Math.random() * 0.5 + 0.5;
+            heart.style.pointerEvents = 'none';
+            document.body.appendChild(heart);
+
+            let top = -30;
+            let interval = setInterval(function() {
+                top += 3;
+                heart.style.top = top + 'px';
+                if (top > window.innerHeight) {
+                    clearInterval(interval);
+                    heart.remove();
+                }
+            }, 30);
+        }, 300);
+    </script>
+</body>
+</html>
